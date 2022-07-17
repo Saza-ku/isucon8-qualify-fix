@@ -17,7 +17,7 @@
     daemon_reload: yes
     enabled: yes
 
-- name: systemd restart torb.perl
+- name: systemd restart torb.go
   become: yes
   become_user: root
   systemd:
