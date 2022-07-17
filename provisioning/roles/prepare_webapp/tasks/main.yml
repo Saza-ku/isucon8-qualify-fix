@@ -95,30 +95,6 @@
   shell: |
     bash -lc "make clean && make deps && make"
 
-- name: Install for torb.perl
-  become: yes
-  become_user: isucon
-  args:
-    chdir: /home/isucon/torb/webapp/perl
-  shell: |
-    bash -lc "carton install"
-
-- name: Install for torb.php
-  become: yes
-  become_user: isucon
-  args:
-    chdir: /home/isucon/torb/webapp/php
-  shell: |
-    bash -lc "composer install"
-
-- name: Install for torb.python
-  become: yes
-  become_user: isucon
-  args:
-    chdir: /home/isucon/torb/webapp/python
-  shell: |
-    bash -lc "sh setup.sh"
-
 - name: Uninstall bundler 2.x
   become: yes
   become_user: isucon
@@ -130,11 +106,3 @@
   become_user: isucon
   shell: |
     bash -lc "gem install bundler -v 1.16.4"
-
-- name: Install for torb.ruby
-  become: yes
-  become_user: isucon
-  args:
-    chdir: /home/isucon/torb/webapp/ruby
-  shell: |
-    bash -lc "bundle install --path=.bundle"
